@@ -7,13 +7,11 @@ function App() {
         <BrowserRouter>
             <Routes>
                 {publicRoutes.map((route, index) => {
-                    // const Layout = route.layout === null ? Fragment : DefaultLayout;
-
-                    const layout = DefaultLayout;
+                    let Layout = DefaultLayout;
                     if (route.layout) {
-                        layout = route.layout;
+                        Layout = route.layout;
                     } else if (route.layout === null) {
-                        layout = Fragment;
+                        Layout = Fragment;
                     }
 
                     const Page = route.component;
